@@ -27,7 +27,7 @@ def main():
 		if 'critics_consensus' in w.keys():					#GET CRITICS REVIEW
 			critics = w['critics_consensus']		
 		if 'synopsis' in w.keys():							#GET SYNOPSIS
-			synopsis = w.get['synopsis']
+			synopsis = w['synopsis']
 		word_list = critics + synopsis
 
 		W_out = re.sub('[%s]' % re.escape('!@#$%^&*(){},.:;"~`+=|\?/<>-_'), ' ', word_list)	#REMOVE PUNCTUATION - CANNOT REMOVE THE 'U' 
@@ -36,8 +36,9 @@ def main():
 		Documents[Size] = W_list															#READ INTO CORPUS
 		Size += 1
 	
-	
-	print Documents[20]
+		if Size == 20:
+			break
+	print Documents[19]
 	
 if __name__ == "__main__":
    main()
